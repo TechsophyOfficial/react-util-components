@@ -1,0 +1,271 @@
+.editor-wrapper {
+  width: 100%;
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Mode Styles */
+.editor-wrapper.dark-mode {
+  background: #1e1e1e;
+  color: #e0e0e0;
+}
+
+.editor-wrapper.dark-mode .toolbar {
+  background: #2d2d2d;
+  border-bottom-color: #404040;
+}
+
+.editor-wrapper.dark-mode .toolbar-group {
+  background: #3d3d3d;
+  border-color: #505050;
+}
+
+.editor-wrapper.dark-mode .toolbar-btn {
+  background: #3d3d3d;
+  color: #e0e0e0;
+}
+
+.editor-wrapper.dark-mode .toolbar-btn:hover {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.editor-wrapper.dark-mode .toolbar-btn.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.editor-wrapper.dark-mode .toolbar-select {
+  background: #3d3d3d;
+  color: #e0e0e0;
+  border-color: #505050;
+}
+
+.editor-wrapper.dark-mode .toolbar-select:hover {
+  border-color: #667eea;
+}
+
+.editor-wrapper.dark-mode .toolbar-select option {
+  background: #3d3d3d;
+  color: #e0e0e0;
+}
+
+.editor-wrapper.dark-mode .editor-area {
+  background: #252525;
+  color: #e0e0e0;
+}
+
+.editor-wrapper.dark-mode .editor-area::-webkit-scrollbar-track {
+  background: #3d3d3d;
+}
+
+.editor-wrapper.dark-mode .editor-area::-webkit-scrollbar-thumb {
+  background: #667eea;
+}
+
+.editor-wrapper.dark-mode .editor-area::-webkit-scrollbar-thumb:hover {
+  background: #764ba2;
+}
+
+/* Toolbar Styles */
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-bottom: 2px solid #dee2e6;
+  align-items: center;
+}
+
+.toolbar-group {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  background: transparent;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #dee2e6;
+}
+
+.toolbar-btn {
+  min-width: 32px;
+  height: 32px;
+  border: 1px solid #dee2e6;
+  background: white;
+  color: #495057;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem;
+}
+
+.toolbar-btn:hover {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.toolbar-btn:active {
+  transform: translateY(0);
+}
+
+.toolbar-btn.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.toolbar-btn.justifyLeft::before {
+  content: "⬅";
+}
+
+.toolbar-btn.justifyCenter::before {
+  content: "↔";
+}
+
+.toolbar-btn.justifyRight::before {
+  content: "➡";
+}
+
+.toolbar-btn.justifyFull::before {
+  content: "⬌";
+}
+
+.toolbar-btn.align-btn {
+  font-size: 0.9rem;
+}
+
+.toolbar-select {
+  min-width: 120px;
+  height: 32px;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  background: white;
+  color: #495057;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.toolbar-select:hover {
+  border-color: #667eea;
+}
+
+.toolbar-select:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.size-select {
+  min-width: 70px;
+}
+
+/* Editor Area */
+.editor-area {
+  min-height: 250px;
+  max-height: 400px;
+  padding: 1rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #212529;
+  background: white;
+  border: none;
+  outline: none;
+  overflow-y: auto;
+}
+
+.editor-area:focus {
+  outline: none;
+}
+
+.editor-area p {
+  margin: 0.5rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .toolbar {
+    padding: 1rem;
+    gap: 0.75rem;
+  }
+
+  .toolbar-group {
+    padding: 0.4rem;
+    gap: 0.4rem;
+  }
+
+  .toolbar-btn {
+    min-width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+  }
+
+  .toolbar-select {
+    min-width: 120px;
+    height: 32px;
+    font-size: 0.85rem;
+  }
+
+  .size-select {
+    min-width: 60px;
+  }
+
+  .editor-area {
+    min-height: 300px;
+    padding: 1.5rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .toolbar-group {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .toolbar-select {
+    flex: 1;
+  }
+}
+
+/* Scrollbar Styling */
+.editor-area::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  cursor: pointer;
+}
+
+.editor-area::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.editor-area::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.editor-area::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  cursor: pointer;
+}
