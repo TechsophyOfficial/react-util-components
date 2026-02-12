@@ -1,17 +1,38 @@
 {
   "name": "react-util-components",
-  "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
+  "main": "./dist/react-util-components.umd.cjs",
+  "module": "./dist/react-util-components.js",
+  "types": "./dist/index.d.ts",
+  "style": "./dist/react-util-components.css",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/react-util-components.js",
+      "require": "./dist/react-util-components.umd.cjs"
+    },
+    "./dist/style.css": "./dist/react-util-components.css",
+    "./components/*": "./src/components/*",
+    "./dist/*": "./dist/*"
+  },
+  "files": [
+    "dist",
+    "src/components"
+  ],
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "vite build",
+    "build:lib": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
   "dependencies": {
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "dompurify": "^3.3.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
@@ -19,13 +40,16 @@
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.1",
-    "dompurify": "^3.3.1",
+    "ajv": "^8.17.1",
     "eslint": "^9.39.1",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.46.4",
-    "vite": "^7.2.4"
+    "vite": "^7.2.4",
+    "vite-plugin-dts": "^4.5.4"
   }
 }

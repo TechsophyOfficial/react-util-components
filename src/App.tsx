@@ -6,7 +6,9 @@ import Shimmer from "./components/Shimmer/Shimmer";
 import "./styles.css";
 
 const App = () => {
-  const [htmlText, setHtmlText] = useState<string>("<p>Start typing here...</p>");
+  const [htmlText, setHtmlText] = useState<string>(
+    "<p>Start typing here...</p>",
+  );
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [activeDemo, setActiveDemo] = useState<string | null>(null);
@@ -30,16 +32,19 @@ const App = () => {
             <h2>✨ Shimmer Component</h2>
             <button
               className="demo-button"
-              onClick={() => setActiveDemo(activeDemo === 'shimmer' ? null : 'shimmer')}
+              onClick={() =>
+                setActiveDemo(activeDemo === "shimmer" ? null : "shimmer")
+              }
             >
-              {activeDemo === 'shimmer' ? '🔼 Hide Demo' : '▶️ Show Demo'}
+              {activeDemo === "shimmer" ? "🔼 Hide Demo" : "▶️ Show Demo"}
             </button>
           </div>
           <p className="description">
-            A lightweight shimmer loading placeholder component with smooth animation effects.
-            Perfect for skeleton screens while content is loading.
+            A lightweight shimmer loading placeholder component with smooth
+            animation effects. Perfect for skeleton screens while content is
+            loading.
           </p>
-          
+
           <div className="features">
             <h3>Features:</h3>
             <ul>
@@ -50,36 +55,49 @@ const App = () => {
             </ul>
           </div>
 
-          {activeDemo === 'shimmer' && (
+          {activeDemo === "shimmer" && (
             <div className="demo-container">
               <h4>Live Demo:</h4>
               <div className="shimmer-demos">
                 <div className="demo-item">
-                  <p><strong>Light Mode (Card):</strong></p>
+                  <p>
+                    <strong>Light Mode (Card):</strong>
+                  </p>
                   <Shimmer height="200px" width="300px" borderRadius="12px" />
                 </div>
                 <div className="demo-item">
-                  <p><strong>Dark Mode (Card):</strong></p>
-                  <Shimmer height="200px" width="300px" borderRadius="12px" darkMode={true} />
+                  <p>
+                    <strong>Dark Mode (Card):</strong>
+                  </p>
+                  <Shimmer
+                    height="200px"
+                    width="300px"
+                    borderRadius="12px"
+                    darkMode={true}
+                  />
                 </div>
                 <div className="demo-item">
-                  <p><strong>Text Lines:</strong></p>
-                  <div style={{ width: '300px' }}>
+                  <p>
+                    <strong>Text Lines:</strong>
+                  </p>
+                  <div style={{ width: "300px" }}>
                     <Shimmer height="20px" width="100%" borderRadius="4px" />
-                    <div style={{ marginTop: '10px' }}>
+                    <div style={{ marginTop: "10px" }}>
                       <Shimmer height="20px" width="80%" borderRadius="4px" />
                     </div>
-                    <div style={{ marginTop: '10px' }}>
+                    <div style={{ marginTop: "10px" }}>
                       <Shimmer height="20px" width="60%" borderRadius="4px" />
                     </div>
                   </div>
                 </div>
                 <div className="demo-item">
-                  <p><strong>Circle Avatar:</strong></p>
+                  <p>
+                    <strong>Circle Avatar:</strong>
+                  </p>
                   <Shimmer height="100px" width="100px" borderRadius="50%" />
                 </div>
               </div>
-              
+
               <div className="code-example">
                 <h4>Usage Example:</h4>
                 <pre>{`<Shimmer 
@@ -99,16 +117,19 @@ const App = () => {
             <h2>🖼️ Lightbox Component</h2>
             <button
               className="demo-button"
-              onClick={() => setActiveDemo(activeDemo === 'lightbox' ? null : 'lightbox')}
+              onClick={() =>
+                setActiveDemo(activeDemo === "lightbox" ? null : "lightbox")
+              }
             >
-              {activeDemo === 'lightbox' ? '🔼 Hide Demo' : '▶️ Show Demo'}
+              {activeDemo === "lightbox" ? "🔼 Hide Demo" : "▶️ Show Demo"}
             </button>
           </div>
           <p className="description">
-            A responsive lightbox component for displaying images with zoom, rotate, and navigation capabilities.
-            Mobile-friendly with touch gestures.
+            A responsive lightbox component for displaying images with zoom,
+            rotate, and navigation capabilities. Mobile-friendly with touch
+            gestures.
           </p>
-          
+
           <div className="features">
             <h3>Features:</h3>
             <ul>
@@ -121,11 +142,11 @@ const App = () => {
             </ul>
           </div>
 
-          {activeDemo === 'lightbox' && (
+          {activeDemo === "lightbox" && (
             <div className="demo-container">
               <h4>Live Demo:</h4>
               <div className="lightbox-trigger">
-                <button 
+                <button
                   className="action-button"
                   onClick={() => {
                     setCurrentImageIndex(0);
@@ -134,11 +155,13 @@ const App = () => {
                 >
                   🎨 Open Lightbox Gallery
                 </button>
-                <p style={{ marginTop: '10px', fontSize: '14px', color: '#666' }}>
+                <p
+                  style={{ marginTop: "10px", fontSize: "14px", color: "#666" }}
+                >
                   Click to view the image gallery with zoom and rotate features
                 </p>
               </div>
-              
+
               <div className="code-example">
                 <h4>Usage Example:</h4>
                 <pre>{`const [isOpen, setIsOpen] = useState(false);
@@ -168,20 +191,25 @@ const images = [
             <h2>📝 Rich Text Editor</h2>
             <button
               className="demo-button"
-              onClick={() => setActiveDemo(activeDemo === 'editor' ? null : 'editor')}
+              onClick={() =>
+                setActiveDemo(activeDemo === "editor" ? null : "editor")
+              }
             >
-              {activeDemo === 'editor' ? '🔼 Hide Demo' : '▶️ Show Demo'}
+              {activeDemo === "editor" ? "🔼 Hide Demo" : "▶️ Show Demo"}
             </button>
           </div>
           <p className="description">
-            A WYSIWYG text editor component with formatting tools and dark mode support.
-            Create and edit rich text content with real-time HTML output.
+            A WYSIWYG text editor component with formatting tools and dark mode
+            support. Create and edit rich text content with real-time HTML
+            output.
           </p>
-          
+
           <div className="features">
             <h3>Features:</h3>
             <ul>
-              <li>Rich text formatting (bold, italic, underline, strikethrough)</li>
+              <li>
+                Rich text formatting (bold, italic, underline, strikethrough)
+              </li>
               <li>Multiple font families and sizes</li>
               <li>Text alignment (left, center, right, justify)</li>
               <li>Ordered and unordered lists</li>
@@ -190,29 +218,31 @@ const images = [
             </ul>
           </div>
 
-          {activeDemo === 'editor' && (
+          {activeDemo === "editor" && (
             <div className="demo-container">
               <h4>Live Demo:</h4>
-              <div style={{ height: '400px', marginBottom: '20px' }}>
-                <RichTextEditor 
-                  setHtmlContent={setHtmlText} 
-                  initialContent={htmlText} 
+              <div style={{ height: "400px", marginBottom: "20px" }}>
+                <RichTextEditor
+                  setHtmlContent={setHtmlText}
+                  initialContent={htmlText}
                 />
               </div>
-              
-              <div style={{ marginTop: '20px' }}>
+
+              <div style={{ marginTop: "20px" }}>
                 <h4>Preview Output:</h4>
-                <div style={{ 
-                  border: '1px solid #e0e0e0', 
-                  borderRadius: '8px', 
-                  padding: '16px',
-                  backgroundColor: '#f9f9f9',
-                  minHeight: '100px'
-                }}>
+                <div
+                  style={{
+                    border: "1px solid #e0e0e0",
+                    borderRadius: "8px",
+                    padding: "16px",
+                    backgroundColor: "#f9f9f9",
+                    minHeight: "100px",
+                  }}
+                >
                   <RenderHtmlView htmlContent={htmlText} />
                 </div>
               </div>
-              
+
               <div className="code-example">
                 <h4>Usage Example:</h4>
                 <pre>{`const [htmlContent, setHtmlContent] = useState<string>("");
