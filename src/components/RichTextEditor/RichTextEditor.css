@@ -195,6 +195,13 @@
   margin: 0.5rem 0;
 }
 
+/* Sizing for numbered List Styles */
+/* For testing purpose */
+List Styles .editor-area ol li::marker,
+.editor-area ul li::marker {
+  font-size: 0.5em;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .toolbar {
@@ -268,4 +275,9 @@
 .editor-area::-webkit-scrollbar-thumb:hover {
   background: #555;
   cursor: pointer;
+}
+
+List Styles .editor-area ol li::marker,
+.editor-area ul li::marker {
+  font-size: 0.5em;
 }
