@@ -61,6 +61,48 @@
   color: #e0e0e0;
 }
 
+.editor-wrapper.dark-mode .editor-area .rte-table td,
+.editor-wrapper.dark-mode .editor-area .rte-table th {
+  border-color: #5a5a5a;
+}
+
+.editor-wrapper.dark-mode .table-dialog {
+  background: #2d2d2d;
+  color: #f4f4f4;
+  border-color: #4e4e4e;
+}
+
+.editor-wrapper.dark-mode .table-dialog-field input {
+  background: #3b3b3b;
+  color: #f4f4f4;
+  border-color: #5f5f5f;
+}
+
+.editor-wrapper.dark-mode .table-dialog-actions button {
+  background: #3f3f3f;
+  color: #f4f4f4;
+  border-color: #5f5f5f;
+}
+
+.editor-wrapper.dark-mode .table-dialog-actions button:last-child {
+  background: #667eea;
+  color: #fff;
+  border-color: #667eea;
+}
+
+.editor-wrapper.dark-mode .table-context-menu {
+  background: #2f2f2f;
+  border-color: #4f4f4f;
+}
+
+.editor-wrapper.dark-mode .table-context-menu button {
+  color: #f0f0f0;
+}
+
+.editor-wrapper.dark-mode .table-context-menu button:hover {
+  background: #4a4a4a;
+}
+
 .editor-wrapper.dark-mode .editor-area::-webkit-scrollbar-track {
   background: #3d3d3d;
 }
@@ -127,19 +169,19 @@
 }
 
 .toolbar-btn.justifyLeft::before {
-  content: "⬅";
+  content: '⬅';
 }
 
 .toolbar-btn.justifyCenter::before {
-  content: "↔";
+  content: '↔';
 }
 
 .toolbar-btn.justifyRight::before {
-  content: "➡";
+  content: '➡';
 }
 
 .toolbar-btn.justifyFull::before {
-  content: "⬌";
+  content: '⬌';
 }
 
 .toolbar-btn.align-btn {
@@ -179,7 +221,7 @@
   max-height: 400px;
   padding: 1rem;
   font-size: 1rem;
-  line-height: 1.6;
+  line-height: 1.35;
   color: #212529;
   background: white;
   border: none;
@@ -192,7 +234,167 @@
 }
 
 .editor-area p {
-  margin: 0.5rem 0;
+  margin: 0.25rem 0;
+}
+
+.editor-area ul,
+.editor-area ol {
+  margin: 0.25rem 0;
+}
+
+.editor-area li {
+  margin: 0.1rem 0;
+}
+
+.editor-area li::marker {
+  font-size: 0.82em;
+}
+
+.editor-area .rte-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0.75rem 0;
+  table-layout: fixed;
+}
+
+.editor-area .rte-table td,
+.editor-area .rte-table th {
+  border: 1px solid #d5d5d5;
+  min-width: 60px;
+  height: 34px;
+  padding: 0.5rem;
+  vertical-align: top;
+}
+
+.editor-area .rte-table td:focus,
+.editor-area .rte-table th:focus {
+  outline: 2px solid #667eea;
+  outline-offset: -2px;
+}
+
+.table-dialog-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 25;
+}
+
+.table-dialog {
+  width: min(320px, 90vw);
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.table-dialog h4 {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+}
+
+.table-dialog-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 0.75rem;
+}
+
+.table-dialog-field label {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.table-dialog-field input {
+  border: 1px solid #cfcfcf;
+  border-radius: 6px;
+  height: 34px;
+  padding: 0 0.65rem;
+}
+
+.table-dialog-error {
+  margin: 0;
+  color: #d14343;
+  font-size: 0.82rem;
+}
+
+.table-dialog-actions {
+  margin-top: 0.9rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.table-dialog-actions button {
+  border: 1px solid #d0d0d0;
+  background: #f9f9f9;
+  color: #222;
+  height: 32px;
+  padding: 0 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.table-dialog-actions button:last-child {
+  background: #4f68dc;
+  color: #fff;
+  border-color: #4f68dc;
+}
+
+.table-context-menu {
+  position: fixed;
+  z-index: 40;
+  width: 190px;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+}
+
+.table-context-menu button {
+  height: 34px;
+  border: none;
+  background: transparent;
+  text-align: left;
+  padding: 0 0.7rem;
+  font-size: 0.86rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.table-context-menu .menu-icon {
+  width: 16px;
+  height: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.9;
+}
+
+.table-context-menu .menu-icon svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 1.25;
+}
+
+.table-context-menu button:hover {
+  background: #f2f5ff;
+}
+
+.table-context-menu button.danger {
+  color: #bf1c1c;
+}
+
+.table-context-menu button.danger:hover {
+  background: #ffeaea;
 }
 
 /* Sizing for numbered List Styles */

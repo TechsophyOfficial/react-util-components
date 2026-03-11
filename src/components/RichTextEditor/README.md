@@ -5,8 +5,11 @@ A WYSIWYG text editor component for React with formatting tools and dark mode su
 ## Features
 
 - Rich text formatting (bold, italic, underline, strikethrough)
-- Multiple font families and sizes
-- Text alignment and lists
+- Font family and font size controls
+- Text alignment and indentation controls
+- Bullet, numbered, and alphabetic lists
+- Table insertion with configurable rows and columns (1-10)
+- Table context menu for row/column/table operations
 - Dark mode toggle
 - Real-time HTML content updates
 
@@ -24,7 +27,7 @@ import RenderHtmlView from "./components/RichTextEditor/RenderHtmlView";
 | Prop             | Type                        | Required | Description                                                          |
 | ---------------- | --------------------------- | -------- | -------------------------------------------------------------------- |
 | `setHtmlContent` | `(content: string) => void` | Yes      | Callback function that receives the HTML content whenever it changes |
-| `initialContent` | `string`                    | Yes      | Initial HTML content to display in the editor                        |
+| `initialContent` | `string`                    | Yes      | Initial HTML content rendered once when the editor mounts            |
 
 ### RenderHtmlView
 
@@ -41,7 +44,9 @@ import { useState } from "react";
 import RichTextEditor from "./components/RichTextEditor/RichTextEditor";
 
 function App() {
-  const [htmlContent, setHtmlContent] = useState<string>("");
+  const [htmlContent, setHtmlContent] = useState<string>(
+    "<p>Start typing here...</p>",
+  );
 
   return (
     <div style={{ height: "600px" }}>
@@ -62,7 +67,9 @@ import RichTextEditor from "./components/RichTextEditor/RichTextEditor";
 import RenderHtmlView from "./components/RichTextEditor/RenderHtmlView";
 
 function App() {
-  const [htmlContent, setHtmlContent] = useState<string>("");
+  const [htmlContent, setHtmlContent] = useState<string>(
+    "<p>Start typing here...</p>",
+  );
 
   return (
     <div style={{ display: "flex", gap: "20px", height: "600px" }}>
@@ -83,14 +90,32 @@ function App() {
 ## Toolbar Features
 
 - **Text Formatting**: Bold, Italic, Underline, Strikethrough
-- **Font Options**: 10 font families, 8 sizes
+- **Font Options**: 10 font families, sizes 1-8
 - **Alignment**: Left, Center, Right, Justify
 - **Lists**: Bullet, Numbered, Alphabetic
-- **Indentation**: Indent/Outdent
+- **Indentation**: Indent and Outdent
+- **Tables**: Insert table from toolbar, then right-click a cell for quick actions
 - **Dark Mode**: Toggle theme
+
+## Table Actions
+
+Right-click inside a table cell to open table actions:
+
+- Add row above or below
+- Remove current row
+- Add column left or right
+- Remove current column
+- Remove entire table
+
+## Keyboard and Interaction Notes
+
+- Press `Escape` to close the table insert dialog or table context menu
+- Press `Enter` on an empty list item to exit the list cleanly
+- The editor keeps focus after formatting and table operations
 
 ## Notes
 
-- The component fills its parent container (100% width and height)
-- Control size by setting dimensions on the parent div
+- The component fills its parent container width
+- Control editor size by setting dimensions on the parent wrapper
+- `initialContent` is applied only once on first mount
 - HTML content is automatically sanitized when using `RenderHtmlView`

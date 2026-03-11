@@ -200,8 +200,8 @@ const images = [
           </div>
           <p className="description">
             A WYSIWYG text editor component with formatting tools and dark mode
-            support. Create and edit rich text content with real-time HTML
-            output.
+            support. Create and edit rich text content with list controls, table
+            tools, and real-time HTML output.
           </p>
 
           <div className="features">
@@ -213,6 +213,9 @@ const images = [
               <li>Multiple font families and sizes</li>
               <li>Text alignment (left, center, right, justify)</li>
               <li>Ordered and unordered lists</li>
+              <li>Alphabetic list option</li>
+              <li>Insert tables (1-10 rows and columns)</li>
+              <li>Right-click table context menu for row/column actions</li>
               <li>Dark mode toggle</li>
               <li>Real-time HTML content updates</li>
             </ul>
@@ -241,6 +244,10 @@ const images = [
                 >
                   <RenderHtmlView htmlContent={htmlText} />
                 </div>
+                <p style={{ marginTop: "10px", color: "#4a5568" }}>
+                  Tip: Click the table icon in the toolbar to insert a table,
+                  then right-click any table cell for row and column actions.
+                </p>
               </div>
 
               <div className="code-example">
@@ -251,6 +258,9 @@ const images = [
   setHtmlContent={setHtmlContent} 
   initialContent={htmlContent} 
 />
+
+// Use the toolbar table icon to insert a table.
+// Right-click inside a table cell to open row/column actions.
 
 <RenderHtmlView htmlContent={htmlContent} />`}</pre>
               </div>

@@ -95,7 +95,7 @@ const images = ["image1.jpg", "image2.jpg"];
 
 ### 📝 Rich Text Editor Component
 
-A WYSIWYG text editor with comprehensive formatting tools and real-time HTML output.
+A WYSIWYG text editor with comprehensive formatting tools, table editing, and real-time HTML output.
 
 **Features:**
 
@@ -103,6 +103,9 @@ A WYSIWYG text editor with comprehensive formatting tools and real-time HTML out
 - Multiple font families and sizes
 - Text alignment (left, center, right, justify)
 - Ordered and unordered lists
+- Alphabetic list support
+- Insert tables with configurable rows and columns (1-10)
+- Right-click table context menu (add/remove rows, add/remove columns, remove table)
 - Dark mode toggle
 - Real-time HTML content updates
 - Sanitized HTML output
@@ -176,6 +179,7 @@ The project includes an interactive documentation UI accessible at the root rout
 
 - View live demos of all components
 - Test component functionality
+- Try Rich Text Editor table insertion and table context actions
 - Copy code examples
 - See all available props and features
 
@@ -191,6 +195,8 @@ src/
 │   ├── RichTextEditor/
 │   │   ├── RichTextEditor.tsx
 │   │   ├── RenderHtmlView.tsx
+│   │   ├── TableContextMenu.tsx
+│   │   ├── TableInsertDialog.tsx
 │   │   ├── RichTextEditor.css
 │   │   └── README.md
 │   └── Shimmer/
