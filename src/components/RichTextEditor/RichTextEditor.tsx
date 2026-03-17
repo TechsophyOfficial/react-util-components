@@ -513,9 +513,6 @@ const RichTextEditor = ({
   }
 
   useEffect(() => {
-    // Set initial focus
-    editorRef.current?.focus()
-
     // Update command states on selection change
     const handleSelectionChange = () => {
       updateCommandStates()
