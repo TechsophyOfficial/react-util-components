@@ -1,11 +1,11 @@
-import { type ReactElement } from "react";
-import "./Shimmer.css";
+import { type ReactElement } from 'react'
+import './Shimmer.css'
 
 interface ShimmerProps {
-  height: number | string;
-  width: number | string;
-  borderRadius: number | string;
-  darkMode?: boolean;
+  height: number | string
+  width: number | string
+  borderRadius: number | string
+  darkMode?: boolean
 }
 
 const Shimmer = ({
@@ -18,14 +18,14 @@ const Shimmer = ({
     height,
     width,
     borderRadius,
-  };
+  }
 
   return (
     <div
-      className={`shimmer ${darkMode ? "dark" : ""}`}
+      className={`shimmer ${darkMode ? 'dark' : ''}`}
       style={shimmerStyle}
     ></div>
-  );
-};
+  )
+}
 
-export default Shimmer;
+export default Shimmer

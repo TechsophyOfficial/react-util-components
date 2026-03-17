@@ -1,51 +1,51 @@
-import { useState } from "react";
-import RichTextEditor from "./components/RichTextEditor/RichTextEditor";
-import RenderHtmlView from "./components/RichTextEditor/RenderHtmlView";
-import Lightbox from "./components/LightBox/LightBox";
-import Shimmer from "./components/Shimmer/Shimmer";
-import "./styles.css";
+import { useState } from 'react'
+import RichTextEditor from './components/RichTextEditor/RichTextEditor'
+import RenderHtmlView from './components/RichTextEditor/RenderHtmlView'
+import Lightbox from './components/LightBox/LightBox'
+import Shimmer from './components/Shimmer/Shimmer'
+import './styles.css'
 
 const App = () => {
   const [htmlText, setHtmlText] = useState<string>(
-    "<p>Start typing here...</p>",
-  );
-  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [activeDemo, setActiveDemo] = useState<string | null>(null);
+    '<p>Start typing here...</p>'
+  )
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false)
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [activeDemo, setActiveDemo] = useState<string | null>(null)
 
   const images = [
-    "https://img.freepik.com/free-photo/vividly-colored-hummingbird-nature_23-2151495325.jpg",
-    "https://img.freepik.com/free-photo/closeup-scarlet-macaw-from-side-view-scarlet-macaw-closeup-head_488145-3540.jpg",
-  ];
+    'https://img.freepik.com/free-photo/vividly-colored-hummingbird-nature_23-2151495325.jpg',
+    'https://img.freepik.com/free-photo/closeup-scarlet-macaw-from-side-view-scarlet-macaw-closeup-head_488145-3540.jpg',
+  ]
 
   return (
-    <div className="app-container">
-      <header className="header">
+    <div className='app-container'>
+      <header className='header'>
         <h1>⚛️ React Util Components</h1>
-        <p className="subtitle">A collection of reusable React components</p>
+        <p className='subtitle'>A collection of reusable React components</p>
       </header>
 
-      <div className="content">
+      <div className='content'>
         {/* Component 1: Shimmer */}
-        <section className="component-section">
-          <div className="component-header">
+        <section className='component-section'>
+          <div className='component-header'>
             <h2>✨ Shimmer Component</h2>
             <button
-              className="demo-button"
+              className='demo-button'
               onClick={() =>
-                setActiveDemo(activeDemo === "shimmer" ? null : "shimmer")
+                setActiveDemo(activeDemo === 'shimmer' ? null : 'shimmer')
               }
             >
-              {activeDemo === "shimmer" ? "🔼 Hide Demo" : "▶️ Show Demo"}
+              {activeDemo === 'shimmer' ? '🔼 Hide Demo' : '▶️ Show Demo'}
             </button>
           </div>
-          <p className="description">
+          <p className='description'>
             A lightweight shimmer loading placeholder component with smooth
             animation effects. Perfect for skeleton screens while content is
             loading.
           </p>
 
-          <div className="features">
+          <div className='features'>
             <h3>Features:</h3>
             <ul>
               <li>Smooth shimmer animation effect</li>
@@ -55,50 +55,50 @@ const App = () => {
             </ul>
           </div>
 
-          {activeDemo === "shimmer" && (
-            <div className="demo-container">
+          {activeDemo === 'shimmer' && (
+            <div className='demo-container'>
               <h4>Live Demo:</h4>
-              <div className="shimmer-demos">
-                <div className="demo-item">
+              <div className='shimmer-demos'>
+                <div className='demo-item'>
                   <p>
                     <strong>Light Mode (Card):</strong>
                   </p>
-                  <Shimmer height="200px" width="300px" borderRadius="12px" />
+                  <Shimmer height='200px' width='300px' borderRadius='12px' />
                 </div>
-                <div className="demo-item">
+                <div className='demo-item'>
                   <p>
                     <strong>Dark Mode (Card):</strong>
                   </p>
                   <Shimmer
-                    height="200px"
-                    width="300px"
-                    borderRadius="12px"
+                    height='200px'
+                    width='300px'
+                    borderRadius='12px'
                     darkMode={true}
                   />
                 </div>
-                <div className="demo-item">
+                <div className='demo-item'>
                   <p>
                     <strong>Text Lines:</strong>
                   </p>
-                  <div style={{ width: "300px" }}>
-                    <Shimmer height="20px" width="100%" borderRadius="4px" />
-                    <div style={{ marginTop: "10px" }}>
-                      <Shimmer height="20px" width="80%" borderRadius="4px" />
+                  <div style={{ width: '300px' }}>
+                    <Shimmer height='20px' width='100%' borderRadius='4px' />
+                    <div style={{ marginTop: '10px' }}>
+                      <Shimmer height='20px' width='80%' borderRadius='4px' />
                     </div>
-                    <div style={{ marginTop: "10px" }}>
-                      <Shimmer height="20px" width="60%" borderRadius="4px" />
+                    <div style={{ marginTop: '10px' }}>
+                      <Shimmer height='20px' width='60%' borderRadius='4px' />
                     </div>
                   </div>
                 </div>
-                <div className="demo-item">
+                <div className='demo-item'>
                   <p>
                     <strong>Circle Avatar:</strong>
                   </p>
-                  <Shimmer height="100px" width="100px" borderRadius="50%" />
+                  <Shimmer height='100px' width='100px' borderRadius='50%' />
                 </div>
               </div>
 
-              <div className="code-example">
+              <div className='code-example'>
                 <h4>Usage Example:</h4>
                 <pre>{`<Shimmer 
   height="200px" 
@@ -112,25 +112,25 @@ const App = () => {
         </section>
 
         {/* Component 2: Lightbox */}
-        <section className="component-section">
-          <div className="component-header">
+        <section className='component-section'>
+          <div className='component-header'>
             <h2>🖼️ Lightbox Component</h2>
             <button
-              className="demo-button"
+              className='demo-button'
               onClick={() =>
-                setActiveDemo(activeDemo === "lightbox" ? null : "lightbox")
+                setActiveDemo(activeDemo === 'lightbox' ? null : 'lightbox')
               }
             >
-              {activeDemo === "lightbox" ? "🔼 Hide Demo" : "▶️ Show Demo"}
+              {activeDemo === 'lightbox' ? '🔼 Hide Demo' : '▶️ Show Demo'}
             </button>
           </div>
-          <p className="description">
+          <p className='description'>
             A responsive lightbox component for displaying images with zoom,
             rotate, and navigation capabilities. Mobile-friendly with touch
             gestures.
           </p>
 
-          <div className="features">
+          <div className='features'>
             <h3>Features:</h3>
             <ul>
               <li>Zoom in/out with buttons or double-click</li>
@@ -142,27 +142,27 @@ const App = () => {
             </ul>
           </div>
 
-          {activeDemo === "lightbox" && (
-            <div className="demo-container">
+          {activeDemo === 'lightbox' && (
+            <div className='demo-container'>
               <h4>Live Demo:</h4>
-              <div className="lightbox-trigger">
+              <div className='lightbox-trigger'>
                 <button
-                  className="action-button"
+                  className='action-button'
                   onClick={() => {
-                    setCurrentImageIndex(0);
-                    setIsLightboxOpen(true);
+                    setCurrentImageIndex(0)
+                    setIsLightboxOpen(true)
                   }}
                 >
                   🎨 Open Lightbox Gallery
                 </button>
                 <p
-                  style={{ marginTop: "10px", fontSize: "14px", color: "#666" }}
+                  style={{ marginTop: '10px', fontSize: '14px', color: '#666' }}
                 >
                   Click to view the image gallery with zoom and rotate features
                 </p>
               </div>
 
-              <div className="code-example">
+              <div className='code-example'>
                 <h4>Usage Example:</h4>
                 <pre>{`const [isOpen, setIsOpen] = useState(false);
 const [currentIndex, setCurrentIndex] = useState(0);
@@ -186,25 +186,25 @@ const images = [
         </section>
 
         {/* Component 3: RichTextEditor */}
-        <section className="component-section">
-          <div className="component-header">
+        <section className='component-section'>
+          <div className='component-header'>
             <h2>📝 Rich Text Editor</h2>
             <button
-              className="demo-button"
+              className='demo-button'
               onClick={() =>
-                setActiveDemo(activeDemo === "editor" ? null : "editor")
+                setActiveDemo(activeDemo === 'editor' ? null : 'editor')
               }
             >
-              {activeDemo === "editor" ? "🔼 Hide Demo" : "▶️ Show Demo"}
+              {activeDemo === 'editor' ? '🔼 Hide Demo' : '▶️ Show Demo'}
             </button>
           </div>
-          <p className="description">
+          <p className='description'>
             A WYSIWYG text editor component with formatting tools and dark mode
             support. Create and edit rich text content with list controls, table
             tools, and real-time HTML output.
           </p>
 
-          <div className="features">
+          <div className='features'>
             <h3>Features:</h3>
             <ul>
               <li>
@@ -221,36 +221,36 @@ const images = [
             </ul>
           </div>
 
-          {activeDemo === "editor" && (
-            <div className="demo-container">
+          {activeDemo === 'editor' && (
+            <div className='demo-container'>
               <h4>Live Demo:</h4>
-              <div style={{ height: "400px", marginBottom: "20px" }}>
+              <div style={{ height: '400px', marginBottom: '20px' }}>
                 <RichTextEditor
                   setHtmlContent={setHtmlText}
                   initialContent={htmlText}
                 />
               </div>
 
-              <div style={{ marginTop: "20px" }}>
+              <div style={{ marginTop: '20px' }}>
                 <h4>Preview Output:</h4>
                 <div
                   style={{
-                    border: "1px solid #e0e0e0",
-                    borderRadius: "8px",
-                    padding: "16px",
-                    backgroundColor: "#f9f9f9",
-                    minHeight: "100px",
+                    border: '1px solid #e0e0e0',
+                    borderRadius: '8px',
+                    padding: '16px',
+                    backgroundColor: '#f9f9f9',
+                    minHeight: '100px',
                   }}
                 >
                   <RenderHtmlView htmlContent={htmlText} />
                 </div>
-                <p style={{ marginTop: "10px", color: "#4a5568" }}>
+                <p style={{ marginTop: '10px', color: '#4a5568' }}>
                   Tip: Click the table icon in the toolbar to insert a table,
                   then right-click any table cell for row and column actions.
                 </p>
               </div>
 
-              <div className="code-example">
+              <div className='code-example'>
                 <h4>Usage Example:</h4>
                 <pre>{`const [htmlContent, setHtmlContent] = useState<string>("");
 
@@ -269,9 +269,9 @@ const images = [
         </section>
 
         {/* Installation Section */}
-        <section className="component-section installation">
+        <section className='component-section installation'>
           <h2>📦 Installation & Setup</h2>
-          <div className="code-example">
+          <div className='code-example'>
             <h4>Import Components:</h4>
             <pre>{`// Shimmer
 import Shimmer from "./components/Shimmer/Shimmer";
@@ -296,7 +296,7 @@ import RenderHtmlView from "./components/RichTextEditor/RenderHtmlView";`}</pre>
         />
       )}
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App
